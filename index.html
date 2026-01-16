@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fear-Induced Allee Predator–Prey Model</title>
+
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Fear-Induced Allee Effects in Prey–Predator Interaction</h1>
+<p class="subtitle">Interactive web visualization based on poster equations</p>
+
+<div class="controls">
+  <label>Fear parameter (f): <span id="fval">0.20</span></label><br>
+  <input type="range" id="fear" min="0" max="2" step="0.05" value="0.2">
+</div>
+
+<div class="model-box">
+  <h3>Mathematical Model</h3>
+  \[
+  \frac{du}{dt} = r u \left(1-\frac{u}{k}\right)
+  \left(\frac{u}{\theta}-1\right)\frac{1}{1+f v} - a u v
+  \]
+  \[
+  \frac{dv}{dt} = \alpha a u v - m v
+  \]
+</div>
+
+<div class="plots">
+  <div id="timeseries"></div>
+  <div id="phase"></div>
+  <div id="fearcurve"></div>
+</div>
+
+<p class="footer">
+Red dashed line & shaded region → Predator extinction region
+</p>
+
+<script src="script.js"></script>
+</body>
+</html>
